@@ -32,3 +32,6 @@ class Campo(models.Model):
 
     def __str__(self):
         return self.campo_nombre
+
+    def __unicode__(self):
+        return self.campo_nombre
