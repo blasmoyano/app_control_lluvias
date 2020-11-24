@@ -1,4 +1,6 @@
 from django.shortcuts import get_object_or_404
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
 from rest_framework.exceptions import ValidationError
 from rest_framework import generics, status
 from rest_framework.response import Response
@@ -20,7 +22,6 @@ class CrearLLuviaPorCampo(generics.ListCreateAPIView):
 
     def get_queryset(self):
         campo_id = self.kwargs.get(self.lookup_url_kwarg)
-
         return LLuvia.objects.filter(
             lluvia_campo=campo_id
         )
@@ -143,3 +144,14 @@ class ListAcumulado(APIView):
                     )
 
             return Response([json_acumualdo])
+
+
+class LluviaCrear(CreateView):
+    template_name = 'lluvias/crear_lluvia.html'
+    model = LLuvia
+    success_url = reverse_lazy('campo_index')
+    fields = [
+        'lluvia_campo',
+        'lluvia_milimetros',
+        'lluvia_fecha'
+    ]

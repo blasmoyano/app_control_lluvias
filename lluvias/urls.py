@@ -15,4 +15,8 @@ urlpatterns = [
         'api/v1/acumulado',
         views.ListAcumulado.as_view()
     ),
+    path(
+        'crear_lluvia/',
+        views.LluviaCrear.as_view(),
+        name="lluvia_crear"),
     ]

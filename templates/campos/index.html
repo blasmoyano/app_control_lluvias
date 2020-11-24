@@ -1,0 +1,29 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block body %}
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-info">Models</strong>
+                        <h3 class="mb-0">Campo - Lluvia</h3>
+                        <p class="card-text mb-auto">Creación de Campos y Lluvia</p>
+                        <a href="{% url 'campo_crear' %}">+ Campo</a>
+                        <a href="{% url 'lluvia_crear' %}" >+ Lluvia</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-success">Admin</strong>
+                    <h3 class="mb-0">Acceso al admin</h3>
+                    <p class="mb-auto">Ingrese al Panel de administración</p>
+                    <a href="{% url 'admin:index' %}">Admin</a>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

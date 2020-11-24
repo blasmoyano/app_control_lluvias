@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'lluvias.apps.LLuviaConfig',
     'rest_framework',
     'drf_yasg',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
